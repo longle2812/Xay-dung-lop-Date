@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+</canvas>
+</body>
+<script>
+    let Rectangle = function (width, height) {
+        this.width = width;
+        this.height = height;
+        this.getWidth = function () {
+            return this.width;
+        }
+        this.getHeight = function () {
+            return this.height;
+        }
+        this.getArea = function () {
+            return width * height;
+        }
+        this.getPeri = function () {
+            return (width + height) * 2;
+        }
+    }
+
+    let Rec = new Rectangle(200,100);
+    let width = Rec.getWidth();
+    let height = Rec.getHeight();
+    let Area = Rec.getArea();
+    let Peri = Rec.getPeri();
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(20, 20, width, height);
+    ctx.stroke();
+    alert("Dien tich hinh chu nhat la " +Area);
+    alert("Chu vi hinh chu nhat la " +Peri);
+</script>
+</html>
